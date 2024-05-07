@@ -7,7 +7,7 @@ ion-content{
 
     display: flex;
     justify-content: center;
-
+    gap: 1em;
 }
 
 .titlePokemon {
@@ -40,4 +40,13 @@ ion-content{
 
     
    
+}
+
+.buttonStyle {
+
+    height: 10vh;
+
+    position: relative;
+    top: 9em;
+
 }

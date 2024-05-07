@@ -20,7 +20,7 @@ export class PokemonPage implements OnInit {
 
   data:any
   pokemonSprite:any
-  z:any = 1
+  id:any = 94
 
   ngOnInit(): any {
     const pokemons:any = document.getElementById('pokemons')
@@ -41,6 +41,51 @@ export class PokemonPage implements OnInit {
  
  
     
+
+  }
+
+  next() {
+
+    const pokemons:any = document.getElementById('pokemons')
+    const pokemonSprite:any = document.getElementById('pokemonSprite')
+    this.id += 1
+    
+  
+    this.http.get(`https://pokeapi.co/api/v2/pokemon/${this.id}`).subscribe(response => {
+
+    console.log(this.data =  response)
+
+    this.pokemonSprite = response
+
+    pokemons.innerHTML = this.data['forms'][0]['name']
+
+    pokemonSprite.src = this.pokemonSprite['sprites']['front_default']
+
+
+   });
+
+
+  }
+
+  previous() {
+    
+    const pokemons:any = document.getElementById('pokemons')
+    const pokemonSprite:any = document.getElementById('pokemonSprite')
+    this.id -= 1
+    
+  
+    this.http.get(`https://pokeapi.co/api/v2/pokemon/${this.id}`).subscribe(response => {
+
+    console.log(this.data =  response)
+
+    this.pokemonSprite = response
+
+    pokemons.innerHTML = this.data['forms'][0]['name']
+
+    pokemonSprite.src = this.pokemonSprite['sprites']['front_default']
+
+
+   });
 
   }
 
