@@ -1,0 +1,40 @@
+.loginFormStyle {
+
+    margin-top: 3em;
+    margin-bottom: 3em;
+    box-shadow: 0px 0px 4px 0px black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+}
+
+ion-content{
+
+    --ion-background-color: orange;
+}
+
+.buttonLogin {
+
+    background-color: red;
+    width: 100%;
+
+}
+
+.buttonLogin:hover {
+
+    background-color: rgb(220, 2, 2);
+
+}
+
+.inputLogin {
+
+    border: 1px solid black;
+    outline: none;
+
+}
+
+.inputLogin:active, .inputLogin:focus {
+
+    border: 1px solid red;
+    box-shadow: 2px 2px 2px 2px black;
+}
