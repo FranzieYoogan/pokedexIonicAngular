@@ -37,13 +37,15 @@ export class Tab1Page {
 
       for(var z = 0; z<=this.data.length; z++  ) {
 
-        if(email.value = this.data[z].userEmail && password.value == this.data[z].userPassword) {
+        if(email.value == this.data[z].userEmail && password.value == this.data[z].userPassword) {
   
           alert.innerHTML = "LOGGED"
           localStorage.setItem("userName", this.data[z].userName);
           window.location.href = "http://localhost:8100/tabs/pokemon"
   
-        } else {
+        } 
+        
+        if(email.value != this.data[z].userEmail && password.value != this.data[z].userPassword){
   
           alert.innerHTML = "FAILED"
   

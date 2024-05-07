@@ -20,14 +20,26 @@ export class TabsPage implements OnInit {
   ngOnInit(): void {
 
     const login:any = document.getElementById('login')
+    const pokemon:any = document.getElementById('pokemon')
     
     if(localStorage.getItem('userName')) {
 
         login.style.display = "none"
 
 
+    } else {
+
+      pokemon.style.display = "none"
+
     }
 
+
+  }
+
+  logout() {
+
+    localStorage.clear()
+    window.location.href = "http://localhost:8100/tabs/tab1"
 
   }
 
