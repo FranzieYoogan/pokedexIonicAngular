@@ -48,6 +48,8 @@ export class PokemonPage implements OnInit {
 
     const pokemons:any = document.getElementById('pokemons')
     const pokemonSprite:any = document.getElementById('pokemonSprite')
+    const containerItems:any = document.getElementById('containerItems')
+    const type:any = document.getElementById('type')
     this.id += 1
     
   
@@ -58,7 +60,8 @@ export class PokemonPage implements OnInit {
     this.pokemonSprite = response
 
     pokemons.innerHTML = this.data['forms'][0]['name']
-
+    type.innerHTML = ""
+    containerItems.style.display = "none"
     pokemonSprite.src = this.pokemonSprite['sprites']['front_default']
 
 
@@ -71,6 +74,8 @@ export class PokemonPage implements OnInit {
     
     const pokemons:any = document.getElementById('pokemons')
     const pokemonSprite:any = document.getElementById('pokemonSprite')
+    const type:any = document.getElementById('type')
+    const containerItems:any = document.getElementById('containerItems')
     this.id -= 1
     
   
@@ -81,11 +86,36 @@ export class PokemonPage implements OnInit {
     this.pokemonSprite = response
 
     pokemons.innerHTML = this.data['forms'][0]['name']
-
+    type.innerHTML = ""
+    containerItems.style.display = "none"
     pokemonSprite.src = this.pokemonSprite['sprites']['front_default']
 
 
    });
+
+  }
+
+  showStats() {
+
+    const pokemons:any = document.getElementById('pokemons')
+    const type:any = document.getElementById('type')
+    const pokemonValue = pokemons.innerHTML
+    const containerItems:any = document.getElementById('containerItems')
+    
+
+   this.http.get(`https://pokeapi.co/api/v2/pokemon/${pokemonValue}`).subscribe(response => {
+
+    console.log(this.data =  response)
+
+    this.pokemonSprite = response
+
+    type.innerHTML =`Type: ${this.data['types'][0]['type']['name'].toUpperCase()}`
+    containerItems.style.display = "block"
+
+
+
+   });
+
 
   }
 

@@ -33,7 +33,7 @@ ion-content{
 .pokemonSprite {
 
     width: 200px;
-  
+    cursor: pointer;
     border-bottom: 2px solid black;
     position: relative;
     bottom: 20px;
@@ -66,5 +66,24 @@ ion-content{
     position: relative;
     right: 3px;  
     transform: rotate(180deg);
+
+}
+
+.containerStats {
+
+    display: flex;
+    justify-content: center;
+    position: relative;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+.containerItems {
+
+    border: 2px solid black;
+    padding: 15px;
+    background-color: red;
+    display: none;
 
 }
