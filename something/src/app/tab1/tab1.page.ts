@@ -25,6 +25,7 @@ export class Tab1Page implements OnInit {
     const password: any = document.getElementById('password')
     const running:any = document.getElementById('running')
     const running2:any = document.getElementById('running2')
+   
 
 
     email.addEventListener('input', (event: { target: any; }) => {
@@ -89,7 +90,11 @@ export class Tab1Page implements OnInit {
 
     })
 
+
   }
+
+
+
 
 
   login() {
@@ -97,7 +102,7 @@ export class Tab1Page implements OnInit {
     const email:any = document.getElementById('email')
     const password:any = document.getElementById('password')
     const alert:any = document.getElementById('alert')
-
+    
    
 
       this.http.get('http://localhost:3000/users').subscribe(response => {
@@ -114,15 +119,41 @@ export class Tab1Page implements OnInit {
 
         if(email.value == this.data[z].userEmail && password.value == this.data[z].userPassword) {
   
-          alert.innerHTML = "LOGGED"
+          alert.src = "/assets/alerts/ok.gif"
+          alert.style.visibility = "visible"
+          alert.style.transition = "0.8s"
           localStorage.setItem("userName", this.data[z].userName);
-          window.location.href = "http://localhost:8100/tabs/pokemon"
+          setTimeout(() => {
+
+            alert.style.left = "0em"
+           
+          }, 400);
+
+          setTimeout(() => {
+      
+            window.location.href = "http://localhost:8100/tabs/pokemon"
+          }, 1000);
+    
   
         } 
         
         if(email.value != this.data[z].userEmail && password.value != this.data[z].userPassword){
   
-          alert.innerHTML = "FAILED"
+          alert.src = "/assets/alerts/error.gif"
+          alert.style.visibility = "visible"
+          alert.style.transition = "0.8s"
+
+          setTimeout(() => {
+
+            alert.style.left = "0em"
+
+          }, 400);
+
+
+
+          setTimeout(() => {
+            window.location.href = "http://localhost:8100/tabs/tab1"
+          }, 1000);
   
         }
   
