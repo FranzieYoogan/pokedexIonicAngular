@@ -121,18 +121,19 @@ export class Tab1Page implements OnInit {
   
           alert.src = "/assets/alerts/ok.gif"
           alert.style.visibility = "visible"
-          alert.style.transition = "0.8s"
+          alert.style.transition = "2s"
           localStorage.setItem("userName", this.data[z].userName);
+
           setTimeout(() => {
 
-            alert.style.left = "0em"
+            alert.style.left = "3.5em"
            
-          }, 400);
+          }, 300);
 
           setTimeout(() => {
       
             window.location.href = "http://localhost:8100/tabs/pokemon"
-          }, 1000);
+          }, 3000);
     
   
         } 
@@ -141,19 +142,18 @@ export class Tab1Page implements OnInit {
   
           alert.src = "/assets/alerts/error.gif"
           alert.style.visibility = "visible"
-          alert.style.transition = "0.8s"
+          alert.style.transition = "2s"
 
           setTimeout(() => {
 
-            alert.style.left = "0em"
-
-          }, 400);
-
-
+            alert.style.left = "3.5em"
+           
+          }, 300);
 
           setTimeout(() => {
+      
             window.location.href = "http://localhost:8100/tabs/tab1"
-          }, 1000);
+          }, 3000);
   
         }
   
