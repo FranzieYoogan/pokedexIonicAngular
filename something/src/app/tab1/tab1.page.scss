@@ -38,3 +38,13 @@ ion-content{
     border: 1px solid red;
     box-shadow: 2px 2px 2px 2px black;
 }
+
+.runningStyle {
+
+    width: 50px;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 60%;
+    left: 3%;
+    visibility: hidden;
+}
