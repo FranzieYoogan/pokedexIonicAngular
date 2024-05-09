@@ -22,25 +22,40 @@ export class TabsPage implements OnInit {
     const login:any = document.getElementById('login')
     const pokemon:any = document.getElementById('pokemon')
     const pokemonLabel:any = document.getElementById('pokemonLabel')
+    const searchLabel:any = document.getElementById('searchLabel')
     const search:any = document.getElementById('search')
+    const search2:any = document.getElementById('search2')
     
     if(localStorage.getItem('userName')) {
 
         login.style.display = "none"
-        search.src = "http://localhost:8100/tabs/search"
+        search.style.display = "block"
+        search2.style.display = "none"
 
     } else {
 
       pokemon.style.display = "none"
-      search.src = "http://localhost:8100/tabs/tab1"
+      search2.style.display = "block"
+      search.style.display = "none"
 
     }
+    
 
     if(window.location.href == "http://localhost:8100/tabs/pokemon") {
 
     pokemonLabel.style.color = "red"
+    searchLabel.style.color = "black"
 
   }
+
+  if(window.location.href == "http://localhost:8100/tabs/tab1") {
+
+
+  searchLabel.style.color = "black"
+
+}
+  
+
 
 
     
@@ -62,24 +77,63 @@ export class TabsPage implements OnInit {
   }
 
 
+
+  loginEvent() {
+    const loginLabel:any = document.getElementById('loginLabel')
+    const searchLabel:any = document.getElementById('searchLabel')
+
+    searchLabel.style.color = "black"
+    loginLabel.style.color = "red"
+
+
+
+
+
+  }
+
+
+
 search() {
-    const login:any = document.getElementById('login')
+    const loginLabel:any = document.getElementById('loginLabel')
     const pokemonLabel:any = document.getElementById('pokemonLabel')
     const searchLabel:any = document.getElementById('searchLabel')
+    const search:any = document.getElementById('search')
 
 
 
     searchLabel.style.color = "red"
     pokemonLabel.style.color = "black"
+    loginLabel.style.color = "black"
 
-    
+  
+
 
   }
+
+
+
+
 
   logout() {
 
     localStorage.clear()
     window.location.href = "http://localhost:8100/tabs/tab1"
+
+  }
+
+  logoutMouseOver() {
+
+    const logoutLabel:any = document.getElementById('logoutLabel')
+
+    logoutLabel.style.color = "red"
+
+  }
+
+  logoutMouseOut() {
+
+    const logoutLabel:any = document.getElementById('logoutLabel')
+
+    logoutLabel.style.color = "black"
 
   }
 

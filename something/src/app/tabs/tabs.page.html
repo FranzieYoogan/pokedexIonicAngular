@@ -1,23 +1,28 @@
 <ion-tabs>
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1" href="/tabs/tab1" id="login" class="iconPokedex">
-      <ion-icon aria-hidden="true" name="triangle"></ion-icon>
-      <ion-label>Login</ion-label>
+    <ion-tab-button tab="tab1" href="/tabs/tab1" id="login" class="iconPokedex" (click)="loginEvent()">
+      <ion-icon aria-hidden="true" src="/assets/icon/login.svg" name="triangle"></ion-icon>
+      <ion-label id="loginLabel">Login</ion-label>
     </ion-tab-button>
 
-        <ion-tab-button tab="pokemon" (click)="pokemon()" href="/tabs/pokemon" id="pokemon" class="iconPokedex">
-      <ion-icon aria-hidden="true" src="/assets/icon/pokedex.svg" class="iconPokedex" ></ion-icon>
-      <ion-label id="pokemonLabel" >Pokemon</ion-label>
+        <ion-tab-button tab="pokemon" (click)="pokemon()" href="/tabs/pokemon" id="pokemon"  class="iconPokedex">
+      <ion-icon aria-hidden="true" src="/assets/icon/pokedex.svg" ></ion-icon>
+      <ion-label id="pokemonLabel" class="pokemonLabel" >Pokemon</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="search" href="/tabs/tab2" id="search" (click)="search()" class="iconPokedex">
+    <ion-tab-button tab="search"  id="search" (click)="search()"  class="iconSearch">
       <ion-icon aria-hidden="true"  src="/assets/icon/search.svg" ></ion-icon>
-      <ion-label id="searchLabel">Search</ion-label>
+      <ion-label id="searchLabel" class="searchLabel" >Search</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="tab3" href="/tabs/tab3" (click) = "logout()" class="iconPokedex">
+     <ion-tab-button tab="search2" href="/tabs/tab1"  id="search2"   class="iconSearch">
+      <ion-icon aria-hidden="true"  src="/assets/icon/search.svg" ></ion-icon>
+      <ion-label id="searchLabel" class="searchLabel" >Search</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3" href="/tabs/tab3" (click) = "logout()" id="logout" (mouseover)="logoutMouseOver()" (mouseout)="logoutMouseOut()" class="iconPokedex">
       <ion-icon aria-hidden="true" src="/assets/icon/exit.svg" ></ion-icon>
-      <ion-label>LogOut</ion-label>
+      <ion-label class="logoutLabel" id="logoutLabel">LogOut</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

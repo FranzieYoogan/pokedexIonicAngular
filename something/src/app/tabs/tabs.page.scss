@@ -5,8 +5,33 @@ color: black;
 
 }
 
-.iconPokedex:hover {
+.iconSearch{
+
+    color: black;
+    
+    
+    }
+
+    .iconSearch:hover > .searchLabel  {
+
+        color: red !important;
+    }
+
+.iconPokedex:hover > .pokemonLabel {
 
     color: red !important;
+
+}
+
+.pokemonLabel:hover {
+
+    color: red;
+
+
+}
+
+.logoutLabel {
+
+    color: black;
 
 }
