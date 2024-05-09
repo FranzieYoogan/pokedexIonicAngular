@@ -48,3 +48,68 @@ ion-content{
     color: red!important ;
 
 }
+
+
+.containerAll {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    gap: 2em;
+}
+
+.pokemonName {
+
+    text-align: center;
+    border-bottom: 1px solid black;
+    font-weight: 900;
+    color: red;
+    font-size: 15px;
+    text-shadow: 2px 2px 2px black;
+    padding-bottom: 5px;
+    background-color: white;
+}
+
+.containerItems {
+
+    border: 2px solid black;
+    background-color: red;
+    display: none;
+
+}
+
+.containerItems2 {
+
+    border: 2px solid black !important;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white;
+    display: none;
+   
+
+}
+
+.spritePokemon {
+
+    width: 100px;
+    border-bottom: 2px solid black;
+    position: relative;
+    bottom: 10px;
+  
+
+}
+
+.textStyle {
+
+    text-shadow: 1px 1px 1px black;
+    color: red;
+
+}
+
+.ability {
+
+    margin-top: 1em;
+    text-shadow: 1px 1px 1px black;
+    color: red;
+}

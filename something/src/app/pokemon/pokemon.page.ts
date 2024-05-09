@@ -101,6 +101,7 @@ export class PokemonPage implements OnInit {
     const type:any = document.getElementById('type')
     const pokemonValue = pokemons.innerHTML
     const containerItems:any = document.getElementById('containerItems')
+ 
     
 
    this.http.get(`https://pokeapi.co/api/v2/pokemon/${pokemonValue}`).subscribe(response => {
@@ -111,7 +112,7 @@ export class PokemonPage implements OnInit {
 
     type.innerHTML =`Type: ${this.data['types'][0]['type']['name'].toUpperCase()}`
     containerItems.style.display = "block"
-
+   
 
 
    });
