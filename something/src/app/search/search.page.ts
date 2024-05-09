@@ -18,4 +18,25 @@ export class SearchPage implements OnInit {
   ngOnInit() {
   }
 
+
+  inputFocus() {
+
+    const searchPokemon:any = document.getElementById('searchPokemon')
+    const inputSearch:any = document.getElementById('inputSearch')
+
+    searchPokemon.src = "/assets/icon/pokemonRed.png"
+
+    inputSearch.classList.add('placeholder')
+
+  }
+
+  inputFocusOut() {
+
+    const searchPokemon:any = document.getElementById('searchPokemon')
+    const inputSearch:any = document.getElementById('inputSearch')
+
+    searchPokemon.src = "/assets/icon/pokemon.png"
+    inputSearch.classList.remove('placeholder')
+  }
+
 }

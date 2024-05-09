@@ -2,3 +2,49 @@ ion-content{
 
     --ion-background-color: orange;
 }
+
+.formStyle {
+
+    margin-top: 3em;
+
+}
+
+.searchPokemon {
+
+    width: 30px;
+    right: 5px;
+    bottom: 2px;
+    position: relative;
+
+}
+
+.buttonStyle {
+
+    background-color: black;
+
+}   
+
+.buttonStyle:hover {
+
+    background-color: red;
+
+}
+
+.inputSearch {
+
+    border: 1px solid black;
+
+}
+
+.inputSearch:active, .inputSearch:focus {
+
+    border: 1px solid #ff0000;
+    box-shadow: 2px 2px 1px 1px black;
+
+}
+
+.placeholder::placeholder {
+
+    color: red!important ;
+
+}
