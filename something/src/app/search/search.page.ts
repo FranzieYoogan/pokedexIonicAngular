@@ -29,6 +29,7 @@ export class SearchPage implements OnInit {
     const containerItems22:any = document.getElementById('containerItems22')
     const containerItems2:any = document.getElementById('containerItems2')
     const abilities:any = document.getElementById('abilities')
+    const weight:any = document.getElementById('weight')
 
 
     inputSearch.addEventListener('input', (event: { target: { value: any; }; }) => {
@@ -37,6 +38,7 @@ export class SearchPage implements OnInit {
 
         containerItems2.style.display = "block"
         containerItems22.style.display = "block"
+        weight.innerHTML = `weight: ${this.dataSearch['weight']}`
         pokemonSprite2.src = this.pokemonSprite2['sprites']['front_default']
         pokemons2.innerHTML = this.dataSearch['forms'][0]['name']
         type2.innerHTML =`Type: ${this.dataSearch['types'][0]['type']['name'].toUpperCase()}`
@@ -87,6 +89,7 @@ export class SearchPage implements OnInit {
     const containerItems22:any = document.getElementById('containerItems22')
     const containerItems2:any = document.getElementById('containerItems2')
     const abilities:any = document.getElementById('abilities')
+    const weight:any = document.getElementById('weight')
 
   
      this.http.get(`https://pokeapi.co/api/v2/pokemon/${inputSearch.value}`).subscribe(response => {
@@ -99,6 +102,7 @@ export class SearchPage implements OnInit {
     type2.innerHTML = ""
  
     pokemonSprite2.src = this.pokemonSprite2['sprites']['front_default']
+    weight.innerHTML = `weight: ${this.dataSearch['weight']}`
 
  
 
