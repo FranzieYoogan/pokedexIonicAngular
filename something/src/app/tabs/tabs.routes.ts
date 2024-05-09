@@ -17,6 +17,13 @@ export const routes: Routes = [
         loadComponent: () =>
           import('../pokemon/pokemon.page').then((m) => m.PokemonPage),
       },
+
+      {
+        path: 'search',
+        loadComponent: () =>
+          import('../search/search.page').then((m) => m.SearchPage),
+      },
+
       {
         path: 'tab2',
         loadComponent: () =>

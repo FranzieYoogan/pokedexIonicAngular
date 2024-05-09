@@ -21,18 +21,58 @@ export class TabsPage implements OnInit {
 
     const login:any = document.getElementById('login')
     const pokemon:any = document.getElementById('pokemon')
+    const pokemonLabel:any = document.getElementById('pokemonLabel')
+    const search:any = document.getElementById('search')
     
     if(localStorage.getItem('userName')) {
 
         login.style.display = "none"
-
+        search.src = "http://localhost:8100/tabs/search"
 
     } else {
 
       pokemon.style.display = "none"
+      search.src = "http://localhost:8100/tabs/tab1"
 
     }
 
+    if(window.location.href == "http://localhost:8100/tabs/pokemon") {
+
+    pokemonLabel.style.color = "red"
+
+  }
+
+
+    
+
+  }
+
+  pokemon() {
+    const login:any = document.getElementById('login')
+    const pokemon:any = document.getElementById('pokemonLabel')
+    const searchLabel:any = document.getElementById('searchLabel')
+
+    
+
+    pokemon.style.color = "red"
+    searchLabel.style.color = "black"
+
+    
+
+  }
+
+
+search() {
+    const login:any = document.getElementById('login')
+    const pokemonLabel:any = document.getElementById('pokemonLabel')
+    const searchLabel:any = document.getElementById('searchLabel')
+
+
+
+    searchLabel.style.color = "red"
+    pokemonLabel.style.color = "black"
+
+    
 
   }
 
