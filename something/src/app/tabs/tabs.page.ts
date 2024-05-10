@@ -20,6 +20,7 @@ export class TabsPage implements OnInit {
   ngOnInit(): void {
 
     const login:any = document.getElementById('login')
+    const loginLabel:any = document.getElementById('loginLabel')
     const pokemon:any = document.getElementById('pokemon')
     const pokemonLabel:any = document.getElementById('pokemonLabel')
     const searchLabel:any = document.getElementById('searchLabel')
@@ -54,11 +55,23 @@ export class TabsPage implements OnInit {
   searchLabel.style.color = "black"
 
 }
+
+if(window.location.href == "http://localhost:8100/tabs/search") {
+
+
+searchLabel.style.color = "red"
+pokemonLabel.style.color = "black"
+
+}
+
+if(window.location.href == "http://localhost:8100/tabs/tab1") {
+
+loginLabel.style.color = "red"
+
+}
   
 
 
-
-    
 
   }
 
