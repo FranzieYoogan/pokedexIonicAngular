@@ -17,6 +17,11 @@ color: black;
         color: red !important;
     }
 
+    .iconList1:hover > .list1Label  {
+
+        color: red !important;
+    }
+
 .iconPokedex:hover > .pokemonLabel {
 
     color: red !important;
@@ -24,6 +29,13 @@ color: black;
 }
 
 .pokemonLabel:hover {
+
+    color: red;
+
+
+}
+
+.list1Label:hover {
 
     color: red;
 

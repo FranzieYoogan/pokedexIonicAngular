@@ -96,6 +96,7 @@ export class Tab1Page implements OnInit {
 
 
 
+  getData:any
 
   login() {
 
@@ -105,24 +106,22 @@ export class Tab1Page implements OnInit {
     
    
 
-      this.http.get('http://localhost:3000/users').subscribe(response => {
+      this.http.get(' https://api.jsonsilo.com/public/8e464e5c-8481-4695-af0f-ae795993f0c5').subscribe(response => {
 
-      console.log(response)
       this.data = response
+      this.getData = this.data['users']
 
-    });
-      
-    
-    if(this.data) {
+      console.log(this.getData)
 
-      for(var z = 0; z<=this.data.length; z++  ) {
 
-        if(email.value == this.data[z].userEmail && password.value == this.data[z].userPassword) {
+      for(var z = 0; z<=this.getData.length; z++  ) {
+
+        if(email.value == this.getData[z].userEmail && password.value == this.getData[z].userPassword) {
   
           alert.src = "/assets/alerts/ok.gif"
           alert.style.visibility = "visible"
           alert.style.transition = "2s"
-          localStorage.setItem("userName", this.data[z].userName);
+          localStorage.setItem("userName", this.getData[z].userName);
 
           setTimeout(() => {
 
@@ -138,7 +137,7 @@ export class Tab1Page implements OnInit {
   
         } 
         
-        if(email.value != this.data[z].userEmail && password.value != this.data[z].userPassword){
+        if(email.value != this.getData[z].userEmail && password.value != this.getData[z].userPassword){
   
           alert.src = "/assets/alerts/error.gif"
           alert.style.visibility = "visible"
@@ -157,10 +156,17 @@ export class Tab1Page implements OnInit {
   
         }
   
-      }
+      
 
 
     }
+
+    });
+      
+    
+   
+
+   
 
   
 

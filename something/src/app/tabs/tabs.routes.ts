@@ -25,6 +25,18 @@ export const routes: Routes = [
       },
 
       {
+        path: 'signup',
+        loadComponent: () =>
+          import('../signup2/signup2.page').then((m) => m.Signup2Page),
+      },
+
+      {
+        path: 'list1',
+        loadComponent: () =>
+          import('../list1/list1.page').then((m) => m.List1Page),
+      },
+
+      {
         path: 'tab2',
         loadComponent: () =>
           import('../tab2/tab2.page').then((m) => m.Tab2Page),

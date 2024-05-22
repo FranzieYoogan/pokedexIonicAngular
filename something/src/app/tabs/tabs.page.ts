@@ -20,12 +20,14 @@ export class TabsPage implements OnInit {
   ngOnInit(): void {
 
     const login:any = document.getElementById('login')
+    const logout:any = document.getElementById('logout')
     const loginLabel:any = document.getElementById('loginLabel')
     const pokemon:any = document.getElementById('pokemon')
     const pokemonLabel:any = document.getElementById('pokemonLabel')
     const searchLabel:any = document.getElementById('searchLabel')
     const search:any = document.getElementById('search')
     const search2:any = document.getElementById('search2')
+    const list1:any = document.getElementById('list1')
     
     if(localStorage.getItem('userName')) {
 
@@ -69,6 +71,20 @@ if(window.location.href == "http://localhost:8100/tabs/tab1") {
 loginLabel.style.color = "red"
 
 }
+
+
+if(!localStorage.getItem('userName')) {
+
+    logout.style.display = "none"
+    search2.style.display = "block"
+    list1.style.display = "none"
+}
+
+if(localStorage.getItem('userName')) {
+
+  list1.style.display = "block"
+
+}
   
 
 
@@ -79,7 +95,9 @@ loginLabel.style.color = "red"
     const login:any = document.getElementById('login')
     const pokemon:any = document.getElementById('pokemonLabel')
     const searchLabel:any = document.getElementById('searchLabel')
+    const list1:any = document.getElementById('list1')
 
+    list1.style.color = "black"
     
 
     pokemon.style.color = "red"
@@ -94,7 +112,9 @@ loginLabel.style.color = "red"
   loginEvent() {
     const loginLabel:any = document.getElementById('loginLabel')
     const searchLabel:any = document.getElementById('searchLabel')
+    const list1:any = document.getElementById('list1')
 
+    list1.style.color = "black"
     searchLabel.style.color = "black"
     loginLabel.style.color = "red"
 
@@ -111,15 +131,29 @@ search() {
     const pokemonLabel:any = document.getElementById('pokemonLabel')
     const searchLabel:any = document.getElementById('searchLabel')
     const search:any = document.getElementById('search')
+    const list1:any = document.getElementById('list1')
 
-
-
+    list1.style.color = "black"
     searchLabel.style.color = "red"
     pokemonLabel.style.color = "black"
     loginLabel.style.color = "black"
-
+    
   
 
+
+  }
+
+  list1() {
+    const loginLabel:any = document.getElementById('loginLabel')
+    const pokemonLabel:any = document.getElementById('pokemonLabel')
+    const searchLabel:any = document.getElementById('searchLabel')
+    const search:any = document.getElementById('search')
+    const list1:any = document.getElementById('list1')
+
+    searchLabel.style.color = "black"
+    pokemonLabel.style.color = "black"
+    loginLabel.style.color = "black"
+    list1.style.color = "red"
 
   }
 
