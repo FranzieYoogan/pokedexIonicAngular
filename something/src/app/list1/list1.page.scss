@@ -44,6 +44,8 @@ ion-content{
         width: 150px;
     }
 
+   
+
     .containerItemm  {
 
         bottom: 0% !important;
@@ -60,6 +62,40 @@ ion-content{
 
         bottom: 25% !important;
 
+    }
+  }
+
+  @media only screen and (width: 412px) {
+    .pokemonListImg{
+        width: 180px !important;
+    }
+
+    .containerAll {
+
+        gap: 1.5em !important;
+        margin-top: 2em !important;
+        margin-left: 0.5em !important;
+        margin-right: 5em !important;
+
+    }
+
+    .containerItemm  {
+
+        bottom: 40% !important;
+        left: 25% !important;
+    }
+
+    .titlePokemon {
+
+        text-align: center;
+        background-color: white;
+        font-size: 18px !important;
+        font-weight: 900;
+        padding-bottom: 5px;
+        color: red;
+        text-shadow: 2px 2px 2px black;
+        border-bottom: 2px solid black;
+        cursor: pointer;
     }
   }
 
