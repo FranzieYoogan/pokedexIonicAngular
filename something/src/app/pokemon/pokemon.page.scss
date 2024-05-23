@@ -24,11 +24,24 @@ ion-content{
 .containerItem {
 
     border: 2px solid black;
-    margin-top: 3em;
-    margin-bottom: 3em;
+    margin-top: 5em;
+    margin-bottom: 5em;
     background-color: red;
 
 }
+
+@media only screen and (width: 320px) {
+    .containerItem {
+
+        border: 2px solid black;
+        margin-top: 6em;
+        margin-bottom: 6em;
+        background-color: red;
+    
+    }
+
+
+  }
 
 .pokemonSprite {
 
@@ -48,7 +61,7 @@ ion-content{
     width: auto;
     margin-left: 0.5em;
     position: relative;
-    top: 9em;
+    top: 11em;
 
 }
 
