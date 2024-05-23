@@ -22,10 +22,7 @@ export class HeaderPage implements OnInit {
 
       anchor.href = "/tabs/pokemon"
 
-    }
-
-
-    if(!localStorage.getItem('userName')) {
+    } else {
 
       anchor.href = "/tabs/tab1"
 

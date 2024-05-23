@@ -65,4 +65,12 @@ showPokemonn(item: any) {
 
 }
 
+close() {
+
+  const containerItemm:any = document.getElementById('containerItemm')
+
+  containerItemm.style.display = "none"
+
+}
+
 }

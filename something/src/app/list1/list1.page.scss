@@ -15,6 +15,18 @@ ion-content{
     
 }
 
+.closeStyle {
+
+    position: absolute;
+    cursor: pointer;
+    z-index: 60;
+    width: 30px;
+    top: -3px;
+    left: 80%;
+   
+
+}   
+
 
 
 .pokemonListImg {
@@ -23,7 +35,7 @@ ion-content{
     width: 200px;
     border-bottom: 2px solid black;
     position: relative;
-    bottom: 10px;
+    bottom: 20px;
 
 }
 
@@ -35,7 +47,7 @@ ion-content{
     .containerItemm  {
 
         bottom: 5% !important;
-
+        left: 38% !important;
     }
   }
 
@@ -77,7 +89,7 @@ ion-content{
 
   @media only screen and (width: 320px) {
     .pokemonListImg{
-        width: 120px !important;
+        width: 150px !important;
     }
 
     .containerItemm  {
@@ -125,10 +137,11 @@ ion-content{
     background-color: red;
     position: fixed;
     bottom: 30%;
-    left: 5%;
+    left: 30%;
     display: none;
 
 }
+
 
 // COPIED FROM BEFORE LIL HOMIE
 
