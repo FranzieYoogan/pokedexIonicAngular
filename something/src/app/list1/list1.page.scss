@@ -9,22 +9,103 @@ ion-content{
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 1em;
     margin-bottom: 1em;
-    gap: 2em;
+    gap: 1em;
     margin-left: 1em;
     margin-right: 1em;
     
 }
 
+
+
 .pokemonListImg {
 
 
-    width: 100px;
+    width: 200px;
     border-bottom: 2px solid black;
     position: relative;
     bottom: 10px;
 
 }
 
+@media only screen and (width: 571px) {
+    .pokemonListImg{
+        width: 150px;
+    }
+
+    .containerItemm  {
+
+        bottom: 5% !important;
+
+    }
+  }
+
+  @media only screen and (width: 400px) {
+    .pokemonListImg{
+        width: 150px !important;
+    }
+
+    .containerItemm  {
+
+        bottom: 25% !important;
+
+    }
+  }
+
+  @media only screen and (width: 425px) {
+    .pokemonListImg{
+        width: 150px !important;
+    }
+
+    .containerItemm  {
+
+        bottom: 25% !important;
+
+    }
+  }
+
+  @media only screen and (width: 375px) {
+    .pokemonListImg{
+        width: 150px !important;
+    }
+
+    .containerItemm  {
+
+        bottom: 25% !important;
+
+    }
+  }
+
+  @media only screen and (width: 320px) {
+    .pokemonListImg{
+        width: 120px !important;
+    }
+
+    .containerItemm  {
+
+        bottom: 25% !important;
+
+    }
+
+    .titlePokemon {
+
+        font-size: 13px !important;
+
+    }
+  }
+
+  @media only screen and (width: 768px) {
+    .pokemonListImg{
+        width: 250px !important;
+    }
+
+    .containerItemm  {
+
+        bottom: 30% !important;
+
+    
+  }
+
+}
 .pokemonTitle {
 
     text-align: center;
