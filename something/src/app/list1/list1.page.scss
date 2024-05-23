@@ -2,3 +2,74 @@ ion-content{
 
     --ion-background-color: orange;
 }
+
+.containerAll {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    gap: 2em;
+    margin-left: 1em;
+    margin-right: 1em;
+    
+}
+
+.pokemonListImg {
+
+
+    width: 100px;
+    border-bottom: 2px solid black;
+    position: relative;
+    bottom: 10px;
+
+}
+
+.pokemonTitle {
+
+    text-align: center;
+    background-color: white;
+    font-weight: 900;
+    padding-bottom: 5px;
+    color: red;
+    text-shadow: 2px 2px 2px black;
+    border-bottom: 2px solid black;
+
+}
+
+.containerItemm {
+     border-bottom: 2px solid black;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    background-color: red;
+    position: fixed;
+    bottom: 30%;
+    left: 5%;
+    display: none;
+
+}
+
+// COPIED FROM BEFORE LIL HOMIE
+
+
+.pokemonSprite {
+
+    width: 100px;
+    cursor: pointer;
+    border-bottom: 2px solid black;
+    position: relative;
+    bottom: 20px;
+  
+}
+
+.titlePokemon {
+
+    text-align: center;
+    background-color: white;
+    font-weight: 900;
+    padding-bottom: 5px;
+    color: red;
+    text-shadow: 2px 2px 2px black;
+    border-bottom: 2px solid black;
+    cursor: pointer;
+}

@@ -66,6 +66,14 @@ pokemonLabel.style.color = "black"
 
 }
 
+if(window.location.href == "http://localhost:8100/tabs/list1") {
+
+
+searchLabel.style.color = "black"
+pokemonLabel.style.color = "black"
+list1.style.color = "red"
+}
+
 if(window.location.href == "http://localhost:8100/tabs/tab1") {
 
 loginLabel.style.color = "red"

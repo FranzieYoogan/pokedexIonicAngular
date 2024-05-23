@@ -5,9 +5,37 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">list1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+ 
+    <section class="containerAll">
+
+      @for (item of listt1; track item.name) {
+        <div class="containerItems">
+          
+          <h1 class="titlePokemon" id="pokemonList1Name" (click)="showPokemonn(item.name)">{{item.name}}</h1>
+
+     
+
+        </div>
+      }
+
+      <div style="position: relative;">
+
+        <div class="containerItemm" id="containerItemm">
+
+          <h1 class="pokemonTitle" id="pokemonTitlee">n</h1>
+        <img class="pokemonListImg" id="pokemonList1Img" src="" alt="">
+
+      </div>
+
+      </div>
+   
+
+
+  
+      
+      
+
+    </section>
+
 </ion-content>
