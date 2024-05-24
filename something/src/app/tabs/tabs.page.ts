@@ -44,14 +44,14 @@ export class TabsPage implements OnInit {
     }
     
 
-    if(window.location.href == "tabs/pokemon") {
+    if(window.location.href == "/tabs/pokemon") {
 
     pokemonLabel.style.color = "red"
     searchLabel.style.color = "black"
 
   }
 
-  if(window.location.href == "tabs/tab1") {
+  if(window.location.href == "/tabs/tab1") {
 
 
   searchLabel.style.color = "black"

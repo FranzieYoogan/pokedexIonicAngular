@@ -90,9 +90,10 @@ export class SearchPage implements OnInit {
     const containerItems2:any = document.getElementById('containerItems2')
     const abilities:any = document.getElementById('abilities')
     const weight:any = document.getElementById('weight')
+    const stats:any = document.getElementById('stats')
 
   
-     this.http.get(`https://pokeapi.co/api/v2/pokemon/${inputSearch.value}`).subscribe(response => {
+     this.http.get(`https://pokeapi.co/api/v2/pokemon/${inputSearch.value.toLowerCase()}`).subscribe(response => {
 
     console.log(this.dataSearch =  response)
 
@@ -112,6 +113,7 @@ export class SearchPage implements OnInit {
         containerItems2.style.display = "block"
         containerItems22.style.display = "block"
         abilities.innerHTML = `Ability: ${this.dataSearch['abilities'][0]['ability']['name'].toUpperCase()}`
+        stats.innerHTML = `Base Stats: ${this.dataSearch['stats'][0]['base_stat']}`
 
    });
 
