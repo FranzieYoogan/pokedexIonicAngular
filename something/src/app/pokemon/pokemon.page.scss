@@ -24,8 +24,8 @@ ion-content{
 .containerItem {
 
     border: 2px solid black;
-    margin-top: 8em;
-    margin-bottom: 8em;
+    margin-top: 5em;
+    margin-bottom: 5em;
     background-color: red;
 
 }
@@ -43,13 +43,61 @@ ion-content{
 
   }
 
+
+  @media only screen and (width: 412px) {
+    .containerItem {
+
+        border: 2px solid black;
+        margin-top: 15em;
+        margin-bottom: 15em;
+        background-color: red;
+    
+    }
+
+    .buttonStyle {
+
+        height: 50%;
+        width: auto;
+        margin-left: 0.5em;
+        position: relative;
+        top: 23em !important;
+    
+    }
+
+
+  }
+
+
+  @media only screen and (width: 915px) {
+    .containerItem {
+
+        border: 2px solid black;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        background-color: red;
+    
+    }
+
+    .buttonStyle {
+
+        height: 50%;
+        width: auto;
+        margin-left: 0.5em;
+        position: relative;
+        top: 8em !important;
+    
+    }
+
+
+  }
+
 .pokemonSprite {
 
     width: 200px;
     cursor: pointer;
     border-bottom: 2px solid black;
     position: relative;
-    bottom: 20px;
+    bottom: 15px;
 
     
    
@@ -61,7 +109,7 @@ ion-content{
     width: auto;
     margin-left: 0.5em;
     position: relative;
-    top: 15em;
+    top: 11em;
 
 }
 

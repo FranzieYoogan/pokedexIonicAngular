@@ -155,6 +155,21 @@ ion-content{
   }
 
 }
+
+@media only screen and (width: 915px) {
+    .pokemonListImg{
+        width: 200px !important;
+    }
+
+    .containerItemm  {
+
+        bottom: -3% !important;
+        left: 40% !important; 
+    
+  }
+
+}
+
 .pokemonTitle {
 
     text-align: center;
