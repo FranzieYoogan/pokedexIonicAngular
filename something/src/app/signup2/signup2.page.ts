@@ -18,4 +18,9 @@ export class Signup2Page implements OnInit {
   ngOnInit() {
   }
 
+  signUp() {
+
+    
+  }
+
 }
