@@ -131,7 +131,7 @@ export class Tab1Page implements OnInit {
 
           setTimeout(() => {
       
-            window.location.href = "http://localhost:8100/tabs/pokemon"
+            window.location.href = "/tabs/pokemon"
           }, 3000);
     
   
@@ -151,7 +151,7 @@ export class Tab1Page implements OnInit {
 
           setTimeout(() => {
       
-            window.location.href = "http://localhost:8100/tabs/tab1"
+            window.location.href = "/tabs/tab1"
           }, 3000);
   
         }
