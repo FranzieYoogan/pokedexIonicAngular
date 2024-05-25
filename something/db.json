@@ -5,6 +5,11 @@
       "userName": "franzieYoogan",
       "userEmail": "franzie@gmail.com",
       "userPassword": "12345678"
+    },
+    {
+      "id": "f882",
+      "userEmail": "rodolfo@gmail.com",
+      "userPassword": "12345678"
     }
   ]
 }
