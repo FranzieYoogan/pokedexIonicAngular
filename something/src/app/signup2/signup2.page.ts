@@ -1,19 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { HeaderPage } from '../header/header.page';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup2',
   templateUrl: './signup2.page.html',
   styleUrls: ['./signup2.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,HeaderPage]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,HeaderPage, HttpClientModule]
 })
 export class Signup2Page implements OnInit {
 
   constructor() { }
+
+  private http = inject(HttpClient)
+  dataSignup:any
+  dataSignup2:any
 
   ngOnInit() {
     const email:any = document.getElementById('email2')
@@ -83,14 +88,77 @@ export class Signup2Page implements OnInit {
       }
 
 
+      
+
+
     })
+
+    this.http.get('http://localhost:3000/users').subscribe(responseSignUp => {
+
+      
+    this.dataSignup = responseSignUp
+
+    console.log(this.dataSignup)
+
+  })
 
 
   }
 
 
-  signUp() {
+  signUp2() {
 
+    const email2:any = document.getElementById('email2')
+    const password2: any = document.getElementById('password2')
+    const okAlert:any = document.getElementById('okAlert')
+    const errorAlert:any = document.getElementById('errorAlert')
+    const signUp2:any = document.getElementById('signUp2')
+    const reg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+    const body = {
+
+      
+        "userEmail": email2.value,
+        "userPassword": password2.value
+      
+     
+
+    }
+
+    for(let z = 0; z <= this.dataSignup.length; z++) {
+
+    
+    if(reg.test((email2.value)) == true && email2.value != this.dataSignup[z].userEmail && email2.value != "" && password2.value != "") {
+
+      okAlert.style.display = "block"
+
+    
+
+
+    this.http.post('http://localhost:3000/users', body).subscribe(responseSignUp2 => {
+      
+      console.log("Data Updated", responseSignUp2)
+
+    });
+
+    setTimeout(() => {
+
+      window.location.reload()
+    }, 2000);
+
+  } else {
+
+    errorAlert.style.display = "block"
+
+    setTimeout(() => {
+
+      window.location.reload()
+
+    }, 2000);
+
+  }
+
+}
 
   }
 

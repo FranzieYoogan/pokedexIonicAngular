@@ -104,3 +104,22 @@ ion-content{
     left: 95%;
     top: -80%;
 }
+
+.containerAlerts {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.okAlert {
+
+    display: none;
+
+}
+
+.errorAlert {
+
+    display: none;
+
+}
