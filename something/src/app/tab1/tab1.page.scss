@@ -4,7 +4,6 @@
     margin-bottom: 5em;
     box-shadow: 0px 0px 4px 0px black;
     border-radius: 10px;
-    padding: 20px;
     background-color: white;
 }
 
@@ -17,7 +16,7 @@ ion-content{
 
     background-color: red;
     width: 100%;
-
+    font-weight: 900;
 }
 
 .buttonLogin:hover {
@@ -66,5 +65,30 @@ ion-content{
     width: 30px;
     position: absolute;
     left: 95%;
-    top: -20%;
+    top: -80%;
+}
+
+.containerTitle {
+
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    background-color: red;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+.titleStyle {
+
+    margin-top: 0.3em;
+    color: white;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px;
+}
+
+.containerItems {
+
+    padding: 20px;
+
 }
