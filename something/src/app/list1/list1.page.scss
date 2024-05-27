@@ -8,7 +8,7 @@ ion-content{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 1em;
-    margin-bottom: 1em;
+    margin-bottom: 0em;
     gap: 1em;
     margin-left: 1em;
     margin-right: 1em;
@@ -150,7 +150,7 @@ ion-content{
     .containerItemm  {
 
         bottom: 30% !important;
-
+        left: 34% !important;
     
   }
 

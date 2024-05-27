@@ -2,7 +2,7 @@
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="tab1" href="/tabs/tab1" id="login" class="iconPokedex" (click)="loginEvent()">
       <ion-icon aria-hidden="true" src="/assets/icon/login.svg" name="triangle"></ion-icon>
-      <ion-label id="loginLabel">Login</ion-label>
+      <ion-label id="loginLabel" class="loginLabel">Login</ion-label>
     </ion-tab-button>
 
         <ion-tab-button tab="pokemon" (click)="pokemon()" href="/tabs/pokemon" id="pokemon"  class="iconPokedex">
@@ -15,7 +15,7 @@
       <ion-label id="searchLabel" class="searchLabel" >Search</ion-label>
     </ion-tab-button>
 
-     <ion-tab-button tab="signup" href="/tabs/signup"  id="search2"   class="iconSearch">
+     <ion-tab-button tab="signup" href="/tabs/signup"  id="search2" (click)="signUp()" class="iconSearch">
       <ion-icon aria-hidden="true"  src="/assets/icon/signup.svg" ></ion-icon>
       <ion-label id="searchLabel" class="searchLabel" >Sign Up</ion-label>
     </ion-tab-button>

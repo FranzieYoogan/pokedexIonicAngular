@@ -54,7 +54,7 @@ export class TabsPage implements OnInit {
   if(window.location.href == "/tabs/tab1") {
 
 
-  searchLabel.style.color = "black"
+  loginLabel.style.color = "red"
 
 }
 
@@ -74,12 +74,6 @@ pokemonLabel.style.color = "black"
 list1.style.color = "red"
 }
 
-if(window.location.href == "tab1") {
-
-loginLabel.style.color = "red"
-
-}
-
 
 if(!localStorage.getItem('userName')) {
 
@@ -94,10 +88,15 @@ if(localStorage.getItem('userName')) {
 
 }
   
-
-
-
   }
+
+  signUp() {
+    const loginLabel:any = document.getElementById('loginLabel')
+    
+    loginLabel.style.color = "black"
+  
+  }
+  
 
   pokemon() {
     const login:any = document.getElementById('login')

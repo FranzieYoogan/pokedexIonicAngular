@@ -26,7 +26,7 @@ export class List1Page implements OnInit {
   listtt2:any
   ngOnInit() {
 
-    this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=45&offset=0`).subscribe(response => {
+    this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=105&offset=0`).subscribe(response => {
       console.log(response);
 
         this.list1 = response
