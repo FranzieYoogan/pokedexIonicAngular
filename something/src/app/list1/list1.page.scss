@@ -156,6 +156,20 @@ ion-content{
 
 }
 
+@media only screen and (width: 571px) {
+    .pokemonListImg{
+        width: 150px !important;
+    }
+
+    .containerItemm  {
+
+        bottom: -15% !important;
+        left: 38% !important;
+    
+  }
+
+}
+
 @media only screen and (width: 915px) {
     .pokemonListImg{
         width: 200px !important;
