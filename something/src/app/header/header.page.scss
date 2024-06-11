@@ -5,3 +5,26 @@
     text-shadow: 2px 2px 2px black;
 
 }
+
+.userName {
+
+    color: red;
+    text-shadow: 2px 2px 2px black;
+    font-weight: 900;
+    display: flex;
+    gap: 0.5em;
+ 
+}
+
+.userImg {
+
+    width: 20px;
+
+}
+
+.containerUser {
+
+    display: flex;
+    justify-content: right;
+
+}

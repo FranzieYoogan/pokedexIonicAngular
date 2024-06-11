@@ -16,7 +16,7 @@ export class Tab1Page implements OnInit {
 
   private http = inject(HttpClient)
 
-    data: any
+ 
 
 
   ngOnInit(): void {
@@ -106,10 +106,10 @@ export class Tab1Page implements OnInit {
     
    
 
-      this.http.get('https://api.jsonsilo.com/public/8e464e5c-8481-4695-af0f-ae795993f0c5').subscribe(response => {
+      this.http.get('http://localhost:3000/users').subscribe(response => {
 
-      this.data = response
-      this.getData = this.data['users']
+      
+      this.getData = response
 
       console.log(this.getData)
 

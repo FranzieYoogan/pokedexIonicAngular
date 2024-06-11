@@ -109,15 +109,17 @@ export class Signup2Page implements OnInit {
   signUp2() {
 
     const email2:any = document.getElementById('email2')
+    const userName:any = document.getElementById('userName')
     const password2: any = document.getElementById('password2')
     const okAlert:any = document.getElementById('okAlert')
     const errorAlert:any = document.getElementById('errorAlert')
     const signUp2:any = document.getElementById('signUp2')
     const reg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    const regText = /^[a-zA-Z]+$/
 
     const body = {
 
-      
+        "userName": userName.value,
         "userEmail": email2.value,
         "userPassword": password2.value
       
@@ -128,7 +130,7 @@ export class Signup2Page implements OnInit {
     for(let z = 0; z <= this.dataSignup.length; z++) {
 
     
-    if(reg.test((email2.value)) == true && email2.value != this.dataSignup[z].userEmail && email2.value != "" && password2.value != "") {
+    if(reg.test((email2.value)) == true && regText.test(userName.value) == true && email2.value != this.dataSignup[z].userEmail && email2.value != "" && password2.value != "") {
 
       okAlert.style.display = "block"
 

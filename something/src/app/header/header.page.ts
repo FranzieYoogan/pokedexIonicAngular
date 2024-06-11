@@ -14,12 +14,15 @@ export class HeaderPage implements OnInit {
 
   constructor() { }
 
+  userName:any
   ngOnInit() {
 
     const anchor:any = document.getElementById('anchor')
 
+
     if(localStorage.getItem('userName')) {
 
+      this.userName = localStorage.getItem('userName')
       anchor.href = "/tabs/pokemon"
 
     } else {
@@ -44,6 +47,24 @@ export class HeaderPage implements OnInit {
     const navIcon:any = document.getElementById('navIcon')
 
     navIcon.style.transform = "rotate(0deg)"
+
+  }
+
+  userImg() {
+    
+    const userImg:any = document.getElementById('userImg')
+
+    userImg.style.transform = "rotate(15deg) scale(1.3)"
+   
+
+  }
+
+  userImgOut() {
+
+    const userImg:any = document.getElementById('userImg')
+
+    userImg.style.transform = "rotate(0deg) "
+
 
   }
 
