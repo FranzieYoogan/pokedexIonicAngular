@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { HeaderPage } from '../header/header.page';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MongoClient } from 'mongodb';
+
 
 @Component({
   selector: 'app-pokemon',

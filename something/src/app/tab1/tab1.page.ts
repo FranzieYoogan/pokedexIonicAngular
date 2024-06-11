@@ -16,7 +16,7 @@ export class Tab1Page implements OnInit {
 
   private http = inject(HttpClient)
 
- 
+    data: any
 
 
   ngOnInit(): void {

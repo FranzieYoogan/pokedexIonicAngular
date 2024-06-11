@@ -119,8 +119,8 @@ export class Signup2Page implements OnInit {
 
     const body = {
 
-        "userName": userName.value,
-        "userEmail": email2.value,
+        "userName": userName.value.toLowerCase(),
+        "userEmail": email2.value.toLowerCase(),
         "userPassword": password2.value
       
      

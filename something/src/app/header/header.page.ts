@@ -20,12 +20,9 @@ export class HeaderPage implements OnInit {
     const anchor:any = document.getElementById('anchor')
 
 
-    if(localStorage.getItem('userName')) {
+    this.userName = localStorage.getItem('userName')
 
-      this.userName = localStorage.getItem('userName')
-
-
-    }
+    return this.userName.charAt(0).toUpperCase() + this.userName.slice(1)
 
 
   }
