@@ -136,7 +136,7 @@ export class Signup2Page implements OnInit {
 
         setTimeout(() => {
 
-             alert.style.left = "35em"
+             alert.style.left = "3.5em"
          
         }, 300);
 
@@ -157,7 +157,7 @@ export class Signup2Page implements OnInit {
 
         setTimeout(() => {
 
-           alert.style.left = "35em"
+           alert.style.left = "3.5em"
          
         }, 300);
 
