@@ -120,9 +120,16 @@ ion-content{
     bottom: 40%;
 }
 
-.errorAlert {
 
-    display: none;
-    position: fixed;
-    bottom: 40%;
+.alertStyle {
+
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 60;
+    border-radius: 200px;
+    border: 2px solid black;
+    visibility: hidden;
+    left: 60em;
+    top: 5em;
 }

@@ -103,11 +103,9 @@ export class Signup2Page implements OnInit {
   signUp2() {
 
     const email2:any = document.getElementById('email2')
-    const userName:any = document.getElementById('userName')
     const password2: any = document.getElementById('password2')
     const okAlert:any = document.getElementById('okAlert')
-    const errorAlert:any = document.getElementById('errorAlert')
-    const signUp2:any = document.getElementById('signUp2')
+    const alert:any = document.getElementById('alert')
 
 
     const firebaseConfig = {
@@ -132,11 +130,19 @@ export class Signup2Page implements OnInit {
         // Signed in 
         const user = userCredential.user;
        
-        okAlert.style.display = "block"
+        alert.src = "/assets/alerts/ok.gif"
+        alert.style.visibility = "visible"
+        alert.style.transition = "2s"
+
+        setTimeout(() => {
+
+             alert.style.left = "35em"
+         
+        }, 300);
 
         setTimeout(() => {
     
-          window.location.reload()
+          window.location.href = "tabs/tab1"
         }, 2000);
 
 
@@ -145,8 +151,15 @@ export class Signup2Page implements OnInit {
         const errorCode = error.code;
         const errorMessage = error.message;
       
+        alert.src = "/assets/alerts/error.gif"
+        alert.style.visibility = "visible"
+        alert.style.transition = "2s"
 
-        errorAlert.style.display = "block"
+        setTimeout(() => {
+
+           alert.style.left = "35em"
+         
+        }, 300);
 
         setTimeout(() => {
     
