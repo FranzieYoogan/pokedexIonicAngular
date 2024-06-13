@@ -3,7 +3,9 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { HeaderPage } from '../header/header.page';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -12,7 +14,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   imports: [IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent, HeaderPage, HttpClientModule],
 })
 export class Tab1Page implements OnInit {
-  constructor() {}
+
 
   private http = inject(HttpClient)
 
@@ -103,72 +105,71 @@ export class Tab1Page implements OnInit {
     const email:any = document.getElementById('email')
     const password:any = document.getElementById('password')
     const alert:any = document.getElementById('alert')
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCzBC3TSggcCOqW423mkkcjl0ELi7crdJE",
+      authDomain: "pokedex-39bba.firebaseapp.com",
+      databaseURL: "https://pokedex-39bba-default-rtdb.firebaseio.com",
+      projectId: "pokedex-39bba",
+      storageBucket: "pokedex-39bba.appspot.com",
+      messagingSenderId: "336480342902",
+      appId: "1:336480342902:web:13526c8ad2c9b6c51ae057",
+      measurementId: "G-PZ02CC0DH8"
+    };
+
+    const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
     
    
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email.value, password.value)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
 
-      this.http.get('http://localhost:3000/users').subscribe(response => {
+        console.log('yow')
 
-      
-      this.getData = response
-
-      console.log(this.getData)
-
-
-      for(var z = 0; z<=this.getData.length; z++  ) {
-
-        if(email.value == this.getData[z].userEmail && password.value == this.getData[z].userPassword) {
-  
-          alert.src = "/assets/alerts/ok.gif"
-          alert.style.visibility = "visible"
-          alert.style.transition = "2s"
-          localStorage.setItem("userName", this.getData[z].userName);
-
-          setTimeout(() => {
-
-            alert.style.left = "3.5em"
-           
-          }, 300);
-
-          setTimeout(() => {
-      
-            window.location.href = "/tabs/pokemon"
-          }, 3000);
-    
-  
-        } 
         
-        if(email.value != this.getData[z].userEmail && password.value != this.getData[z].userPassword){
-  
-          alert.src = "/assets/alerts/error.gif"
-          alert.style.visibility = "visible"
-          alert.style.transition = "2s"
+        alert.src = "/assets/alerts/ok.gif"
+        alert.style.visibility = "visible"
+        alert.style.transition = "2s"
+        localStorage.setItem("userName", email.value);
 
-          setTimeout(() => {
+        setTimeout(() => {
 
-            alert.style.left = "3.5em"
-           
-          }, 300);
+          alert.style.left = "3.5em"
+         
+        }, 300);
 
-          setTimeout(() => {
+        setTimeout(() => {
       
-            window.location.href = "/tabs/tab1"
-          }, 3000);
-  
-        }
-  
-      
+          window.location.href = "/tabs/pokemon"
+        }, 3000);
 
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-    }
+        alert.src = "/assets/alerts/error.gif"
+        alert.style.visibility = "visible"
+        alert.style.transition = "2s"
 
-    });
-      
+        setTimeout(() => {
+
+          alert.style.left = "3.5em"
+         
+        }, 300);
+
+        setTimeout(() => {
     
-   
+          window.location.href = "/tabs/tab1"
+        }, 3000);
 
-   
+      });
 
-  
+         
+      
 
   }
 

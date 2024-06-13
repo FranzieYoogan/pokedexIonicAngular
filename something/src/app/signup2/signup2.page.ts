@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 import { HeaderPage } from '../header/header.page';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -93,15 +96,6 @@ export class Signup2Page implements OnInit {
 
     })
 
-    this.http.get('http://localhost:3000/users').subscribe(responseSignUp => {
-
-      
-    this.dataSignup = responseSignUp
-
-    console.log(this.dataSignup)
-
-  })
-
 
   }
 
@@ -114,54 +108,62 @@ export class Signup2Page implements OnInit {
     const okAlert:any = document.getElementById('okAlert')
     const errorAlert:any = document.getElementById('errorAlert')
     const signUp2:any = document.getElementById('signUp2')
-    const reg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-    const regText = /^[a-zA-Z]+$/
 
-    const body = {
 
-        "userName": userName.value.toLowerCase(),
-        "userEmail": email2.value.toLowerCase(),
-        "userPassword": password2.value
-      
-     
-
-    }
-
-    for(let z = 0; z <= this.dataSignup.length; z++) {
-
+    const firebaseConfig = {
+      apiKey: "AIzaSyCzBC3TSggcCOqW423mkkcjl0ELi7crdJE",
+      authDomain: "pokedex-39bba.firebaseapp.com",
+      databaseURL: "https://pokedex-39bba-default-rtdb.firebaseio.com",
+      projectId: "pokedex-39bba",
+      storageBucket: "pokedex-39bba.appspot.com",
+      messagingSenderId: "336480342902",
+      appId: "1:336480342902:web:13526c8ad2c9b6c51ae057",
+      measurementId: "G-PZ02CC0DH8"
+    };
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
     
-    if(reg.test((email2.value)) == true && regText.test(userName.value) == true && email2.value != this.dataSignup[z].userEmail && email2.value != "" && password2.value != "") {
-
-      okAlert.style.display = "block"
-
     
 
 
-    this.http.post('http://localhost:3000/users', body).subscribe(responseSignUp2 => {
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email2.value, password2.value)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+       
+        okAlert.style.display = "block"
+
+        setTimeout(() => {
+    
+          window.location.reload()
+        }, 2000);
+
+
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
       
-      console.log("Data Updated", responseSignUp2)
 
-    });
+        errorAlert.style.display = "block"
 
-    setTimeout(() => {
+        setTimeout(() => {
+    
+          window.location.reload()
+    
+        }, 2000);
 
-      window.location.reload()
-    }, 2000);
+      });
 
-  } else {
+    
+   
 
-    errorAlert.style.display = "block"
+    
 
-    setTimeout(() => {
-
-      window.location.reload()
-
-    }, 2000);
-
-  }
-
+  } 
 }
 
-  }
+  
 
-}
+
