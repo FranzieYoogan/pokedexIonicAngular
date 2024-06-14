@@ -5,6 +5,10 @@
     box-shadow: 0px 0px 4px 0px black;
     border-radius: 10px;
     background-color: white;
+    position: relative;
+    left: 5%;
+    opacity: 0;
+    transition: 1s;
 }
 
 ion-content{
