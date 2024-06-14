@@ -28,14 +28,9 @@ export class Signup2Page implements OnInit {
     const password: any = document.getElementById('password2')
     const running:any = document.getElementById('running')
     const running2:any = document.getElementById('running2')
-    const loginFormStyle:any = document.getElementById('loginFormStyle')
-
-    setTimeout(() => {
-        loginFormStyle.style.opacity = "1"
-    loginFormStyle.style.left = "0%"
-    }, 300);
   
 
+    
 
     email.addEventListener('input', (event: { target: any; }) => {
 

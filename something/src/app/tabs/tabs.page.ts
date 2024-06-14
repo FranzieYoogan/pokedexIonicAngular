@@ -92,7 +92,9 @@ if(localStorage.getItem('userName')) {
 
   signUp() {
     const loginLabel:any = document.getElementById('loginLabel')
-    
+    const signUpLabel:any = document.getElementById('signUpLabel')
+
+    signUpLabel.style.color = "red"
     loginLabel.style.color = "black"
   
   }
@@ -120,7 +122,9 @@ if(localStorage.getItem('userName')) {
     const loginLabel:any = document.getElementById('loginLabel')
     const searchLabel:any = document.getElementById('searchLabel')
     const list1:any = document.getElementById('list1')
+    const signUpLabel:any = document.getElementById('signUpLabel')
 
+    signUpLabel.style.color = "black"
     list1.style.color = "black"
     searchLabel.style.color = "black"
     loginLabel.style.color = "red"
